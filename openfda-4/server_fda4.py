@@ -8,28 +8,9 @@ PORT = 8006
 class testHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
     # GET
     def do_GET(self):
-        headers = {'User-Agent': 'http-client'}
 
-        conn = http.client.HTTPSConnection("api.fda.gov")
-        conn.request("GET", "/drug/label.json?limit=10", None, headers)
-        r1 = conn.getresponse()
-        print(r1.status, r1.reason)
-        repos_raw = r1.read().decode("utf-8")
-        conn.close()
 
-        drugs = json.loads(repos_raw)
 
-        drugs = drugs['results']
-        drugs_id = "<ol>" + drugs[0]['id'] + "</ol>" + \
-                   "<ol>" + drugs[1]['id'] + "</ol>" + \
-                   "<ol>" + drugs[2]['id'] + "</ol>" + \
-                   "<ol>" + drugs[3]['id'] + "</ol>" + \
-                   "<ol>" + drugs[4]['id'] + "</ol>" + \
-                   "<ol>" + drugs[5]['id'] + "</ol>" + \
-                   "<ol>" + drugs[6]['id'] + "</ol>" + \
-                   "<ol>" + drugs[7]['id'] + "</ol>" + \
-                   "<ol>" + drugs[8]['id'] + "</ol>" + \
-                   "<ol>" + drugs[9]['id'] + "</ol>"
 
 
 
