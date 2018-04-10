@@ -15,7 +15,7 @@ class testHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         self.send_header('Content-type', 'text/html')
         self.end_headers()
         if self.path == "/":
-            with open("search.html") as f:
+            with open("searchtml.html") as f:
                 message = f.read()
                 self.wfile.write(bytes(message, "utf8"))
 
