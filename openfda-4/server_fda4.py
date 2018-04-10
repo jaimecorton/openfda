@@ -41,7 +41,7 @@ class testHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
         return
 
-
+#PRACTICEMADEBYJAIMECORTÓN
 Handler = http.server.SimpleHTTPRequestHandler
 Handler = testHTTPRequestHandler
 
@@ -57,7 +57,7 @@ httpd.serve_forever()
 
 Handler = http.server.SimpleHTTPRequestHandler
 Handler = testHTTPRequestHandler
-
+#PRACTICEMADEBYJAIMECORTÓN
 httpd = socketserver.TCPServer(("", PORT), Handler)
 print("serving at port", PORT)
 httpd.serve_forever()
