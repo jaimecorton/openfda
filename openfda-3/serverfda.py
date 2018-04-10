@@ -3,7 +3,7 @@ import socketserver
 import json
 
 PORT = 8006
-
+#PRACTICEMADEBYJAIMECORTÓN
 # HTTPRequestHandler class
 class testHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
     # GET
@@ -45,7 +45,7 @@ class testHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         # Write content as utf-8 data
         self.wfile.write(bytes(message, "utf8"))
         return
-
+#PRACTICEMADEBYJAIMECORTÓN
 Handler = http.server.SimpleHTTPRequestHandler
 Handler = testHTTPRequestHandler
 
