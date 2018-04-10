@@ -33,9 +33,11 @@ class testHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             conn.close()
 
             drugs = json.loads(repos_raw)
-            drugs = drugs['results']
-            drugs_id = "<ol>" + drugs[0]['id'] + "</ol>"
-            self.wfile.write(bytes(drugs_id, "utf8"))
+            total_drugs=""
+            for drug in drugs['results']:
+                drugs_id = "<ol>" + drugs[0]['id'] + "</ol>"
+                total_drugs = total_drugs + drugs_id
+            self.wfile.write(bytes(total_drugs, "utf8"))
 
         return
 
