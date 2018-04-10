@@ -33,7 +33,7 @@ class testHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             conn.close()
 
             drugs = json.loads(repos_raw)
-            total_drugs = ""
+            total_drug = ""
             for drug in drugs['results']:
                 drugs_id = "<ol>" + drug['id'] + "</ol>"
                 total_drug = total_drug + drugs_id
