@@ -146,6 +146,7 @@ class TestOpenFDA(unittest.TestCase):
         parser = OpenFDAHTMLParser()
         parser.feed(resp.text)
         self.assertEqual(parser.items_number, 10)
+        print(url)
 
     def test_list_companies(self):
         url = 'http://localhost:' + str(self.TEST_PORT)

@@ -19,7 +19,7 @@ class testHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
                 message = f.read()
                 self.wfile.write(bytes(message, "utf8"))
 
-        elif "search_active_ingredient" in self.path:
+        elif "searchDrug" in self.path:
             params = self.path.split("?")[1]
             drug = params.split("&")[0].split("=")[1]
             limit = params.split("&")[1].split("=")[1]
@@ -39,7 +39,7 @@ class testHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
                 total_drug = total_drug + drugs_id
             self.wfile.write(bytes(total_drug, "utf8"))
 
-        elif "search_company" in self.path:
+        elif "searchCompany" in self.path:
             params = self.path.split("?")[1]
             company = params.split("&")[0].split("=")[1]
             limit = params.split("&")[1].split("=")[1]
@@ -147,9 +147,6 @@ class testHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
                            "</html>"
 
             self.wfile.write(bytes(listWarnings, "utf8"))
-
-        else:
-
 
 
 
